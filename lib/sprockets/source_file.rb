@@ -12,7 +12,7 @@ module Sprockets
         lines = []
 
         comments = []
-        File.open(pathname.absolute_location) do |file|
+        File.open(pathname.absolute_location, "rb") do |file|
           file.each do |line|
             lines << line = SourceLine.new(self, line, file.lineno)
 
