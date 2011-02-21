@@ -31,7 +31,7 @@ module Sprockets
 
     def save_to(filename)
       timestamp = mtime
-      File.open(filename, "w") { |file| file.write(to_s) }
+      File.open(filename, "wb") { |file| file.write(to_s) }
       File.utime(timestamp, timestamp, filename)
       true
     end
